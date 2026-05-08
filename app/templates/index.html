@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Disease Prediction System</h1>
+
+<div class="main-container">
+
+    <!-- LEFT SIDE (FORM) -->
+    <div class="left-box">
+        <h2>Enter Symptoms</h2>
+
+        <form method="POST">
+
+            <div class="form-group">
+                <label>Fever:</label>
+                <select name="fever">
+                    <option value="1" {% if form_data.fever == '1' %}selected{% endif %}>Yes</option>
+                    <option value="0" {% if form_data.fever == '0' %}selected{% endif %}>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Cough:</label>
+                <select name="cough">
+                    <option value="1" {% if form_data.cough == '1' %}selected{% endif %}>Yes</option>
+                    <option value="0" {% if form_data.cough == '0' %}selected{% endif %}>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Fatigue:</label>
+                <select name="fatigue">
+                    <option value="1" {% if form_data.fatigue == '1' %}selected{% endif %}>Yes</option>
+                    <option value="0" {% if form_data.fatigue == '0' %}selected{% endif %}>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Difficulty Breathing:</label>
+                <select name="breathing">
+                    <option value="1" {% if form_data.breathing == '1' %}selected{% endif %}>Yes</option>
+                    <option value="0" {% if form_data.breathing == '0' %}selected{% endif %}>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <select name="gender">
+                    <option value="1" {% if form_data.gender == '1' %}selected{% endif %}>Male</option>
+                    <option value="0" {% if form_data.gender == '0' %}selected{% endif %}>Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Blood Pressure:</label>
+                <select name="bp">
+                    <option value="0" {% if form_data.bp == '0' %}selected{% endif %}>Low</option>
+                    <option value="1" {% if form_data.bp == '1' %}selected{% endif %}>Normal</option>
+                    <option value="2" {% if form_data.bp == '2' %}selected{% endif %}>High</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Cholesterol:</label>
+                <select name="chol">
+                    <option value="0" {% if form_data.chol == '0' %}selected{% endif %}>Low</option>
+                    <option value="1" {% if form_data.chol == '1' %}selected{% endif %}>Normal</option>
+                    <option value="2" {% if form_data.chol == '2' %}selected{% endif %}>High</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <!-- RIGHT SIDE (RESULT) -->
+    <div class="right-box">
+        <h2>Prediction Result</h2>
+
+        {% if result %}
+            <p><strong>Disease:</strong> {{ result.disease }}</p>
+            <p><strong>Category:</strong> {{ result.category }}</p>
+
+            <h3>Diet</h3>
+            <p>{{ result.diet }}</p>
+
+            <h3>Medicines</h3>
+            <p>{{ result.medicines }}</p>
+
+            <h3>Prevention</h3>
+            <p>{{ result.prevention }}</p>
+
+        {% else %}
+            <p>No prediction yet</p>
+        {% endif %}
+    </div>
+
+</div>
+
+</body>
+</html>

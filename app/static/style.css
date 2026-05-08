@@ -1,0 +1,103 @@
+/* BACKGROUND */
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    color: #c4b5fd;
+    margin-top: 20px;
+}
+
+/* MAIN LAYOUT */
+.main-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* CARDS */
+.left-box,
+.right-box {
+    width: 380px;
+    padding: 22px;
+    background: #1e293b;
+    border-radius: 14px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.5);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+/* HEADINGS */
+h2 {
+    color: #a5b4fc;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #86efac;
+    margin-top: 15px;
+}
+
+/* FORM ROW */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* LABEL */
+.form-group label {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+/* SELECT BOX */
+.form-group select {
+    width: 150px;
+    padding: 7px;
+    border-radius: 8px;
+    border: none;
+    background: #334155;
+    color: #f1f5f9;
+    outline: none;
+}
+
+/* 🔥 BUTTON (CONSISTENT SIZE + SHAPE) */
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    /* gradient theme (purple → green) */
+    background: linear-gradient(135deg, #a78bfa, #86efac);
+    color: #0f172a;
+
+    transition: 0.3s ease;
+}
+
+/* BUTTON HOVER */
+button:hover {
+    transform: scale(1.03);
+    opacity: 0.95;
+}
+
+/* RIGHT SIDE TEXT CLEAN */
+.right-box p {
+    line-height: 1.5;
+    color: #e2e8f0;
+}
+
+/* RESULT STRONG LABELS */
+.right-box strong {
+    color: #fbbf24;
+}
